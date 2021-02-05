@@ -8,8 +8,24 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'add-note',
+    loadChildren: () => import('./add-note/add-note.module').then( m => m.AddNotePageModule)
+  },
+  {
+    path: 'apercu-note',
+    loadChildren: () => import('./apercu-note/apercu-note.module').then( m => m.ApercuNotePageModule)
   },
 ];
 
